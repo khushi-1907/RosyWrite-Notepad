@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --light-blue-bg: #ffedff;
+      --dark-blue-bg: #ffbdd6;
+      --dark-blue-border: #fdcdfd;
+      --input-blue: #ec93b5;
+      --placeholder-blue: #ffedff;
+      --text-light: #7a2e4c;
+      --button-blue: #be6085;
+      --button-blue-hover: #ec7fa9;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: url('/background.webp') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body class="text-[var(--text-light)] font-sans p-8 min-h-screen">
+  <div class="max-w-4xl mx-auto px-4 pt-4 pb-8 bg-[var(--light-blue-bg)] bg-opacity-80 rounded-xl">
+    <h1 class="text-4xl font-bold text-center text-[var(--text-light)] mb-6">My Notes</h1>
+    <!-- Note Form -->
+    <form action="/create" method="post"
+      class="bg-[var(--dark-blue-bg)] p-6 border border-[var(--dark-blue-border)] rounded-xl shadow-md mb-10">
+      <div class="mb-4">
+        <label class="block text-[var(--text-light)] text-sm font-bold mb-2" for="title">Title</label>
+        <input name="title"
+          class="border border-[var(--dark-blue-border)] rounded-xl w-full px-4 py-2 bg-[var(--input-blue)] text-[var(--text-light)] placeholder-[var(--placeholder-blue)]"
+          id="title" type="text" placeholder="Enter title">
+      </div>
+      <div class="mb-4">
+        <label class="block text-[var(--text-light)] text-sm font-bold mb-2" for="description">Description</label>
+        <textarea name="note"
+          class="resize-none w-full px-4 py-2 border border-[var(--dark-blue-border)] rounded-xl bg-[var(--input-blue)] text-[var(--text-light)] placeholder-[var(--placeholder-blue)]"
+          id="description" placeholder="Write your note here..." rows="4"></textarea>
+      </div>
+      <button type="submit"
+        class="bg-[var(--button-blue)] hover:bg-[var(--button-blue-hover)] text-white py-2 px-4 rounded">
+        Add Note
+      </button>
+    </form>
+
+    <!-- Notes Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% if(files.length>0){ %>
+        <% files.forEach(function(val){ %>
+        <div
+          class="bg-[var(--dark-blue-bg)] p-4 rounded-xl shadow-lg border border-[var(--dark-blue-border)]">
+          <h2 class="text-xl font-semibold text-[var(--text-light)] mb-2"><%= val %></h2>
+          <button
+            class="bg-[var(--button-blue)] hover:bg-[var(--button-blue-hover)] text-white py-1 px-2 rounded">
+            <a href="/file/<%= val %>">Open</a>
+          </button>
+        </div>
+        <% }) %>
+      <% }else{ %>
+        <div class="text-[var(--text-light)]">No notes available.</div>
+      <% } %>
+    </div>
+  </div>
+</body>
+
+</html>
