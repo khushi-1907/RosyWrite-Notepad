@@ -14,43 +14,59 @@
       --input-bg: #ec93b5;
       --placeholder-color: #ffedff;
       --text-primary: #7a2e4c;
-      --button-primary: #be6085;
+      --button-primary: #D16D87;
       --button-primary-hover: #ec7fa9;
     }
 
+    html,
     body {
+      height: 100%;
+      margin: 0;
       background: url('/background.webp') no-repeat center center fixed;
       background-size: cover;
     }
   </style>
 </head>
 
-<body class="text-[var(--text-primary)] min-h-screen font-sans p-8">
-  <div class="max-w-3xl mx-auto bg-[var(--bg-light)] bg-opacity-80 rounded-xl p-8 shadow-lg">
-    
-    <!-- Go Back Button -->
-    <a href="/" class="inline-block bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-2 px-4 mb-8 rounded">
-      ← Go Back to Home
-    </a>
-
-    <!-- Note Title -->
-    <h1 class="text-4xl font-bold mb-4 text-[var(--text-primary)]">Edit Note: </h1>
-
-    <!-- Edit Form -->
-    <form action="/edit/<%= file %>" method="POST">
-        <div class="mb-4">
-            <input
-            type="text"
-            name="title"
-            value="<%= file %>"
-            class="w-full px-4 py-2 border border-[var(--border-dark)] rounded-xl bg-[var(--bg-dark)] text-[var(--text-primary)] placeholder-[var(--placeholder-color)] focus:outline-none focus:border-[var(--button-primary)] mb-4"
-            placeholder="Title"
-            />
-      <div class="mb-6">
+<body class="text-[var(--text-primary)] font-sans p-8 min-h-screen">
+  <div
+    class="max-w-3xl mx-auto px-4 pt-4 pb-8 bg-white bg-opacity-70 rounded-xl"
+  >
+    <h1 class="text-4xl font-bold text-center text-[var(--text-primary)] mb-6">
+      Edit Note
+    </h1>
+    <form
+      action="/edit/<%= file %>"
+      method="POST"
+      class="border border-[var(--border-dark)] mb-10 bg-pink-50 rounded-lg p-6 shadow-md"
+    >
+      <div class="mb-4">
+        <label
+          class="block text-[var(--text-primary)] text-sm font-bold mb-2"
+          for="title"
+          >Title</label
+        >
+        <input
+          type="text"
+          name="title"
+          value="<%= file %>"
+          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          id="title"
+          placeholder="Enter title"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-[var(--text-primary)] text-sm font-bold mb-2"
+          for="note"
+          >Description</label
+        >
         <textarea
           name="note"
-          rows="8"
-          class="w-full px-4 py-2 border border-[var(--border-dark)] rounded-xl bg-[var(--bg-dark)] text-[var(--text-primary)] placeholder-[var(--placeholder-color)] focus:outline-none focus:border-[var(--button-primary)]"
+          rows="5"
+          class="resize-none w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
+          id="note"
+          placeholder="Write your note here..."
         ><%= data %></textarea>
       </div>
       <button
@@ -60,6 +76,12 @@
         Save Changes
       </button>
     </form>
+    <a
+      href="/"
+      class="block text-center bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-2 px-4 rounded"
+    >
+      ← Go Back to Home
+    </a>
   </div>
 </body>
 

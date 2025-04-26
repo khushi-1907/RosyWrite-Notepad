@@ -13,7 +13,7 @@
         --input-bg: #ec93b5;
         --placeholder-color: #ffedff;
         --text-primary: #7a2e4c;
-        --button-primary: #be6085;
+        --button-primary:  #D16D87;
         --button-primary-hover: #ec7fa9;
       }
 
@@ -29,7 +29,7 @@
 
   <body class="text-[var(--text-primary)] font-sans p-8 min-h-screen">
     <div
-      class="max-w-4xl mx-auto px-4 pt-4 pb-8 bg-[var(--bg-light)] bg-opacity-80 rounded-xl"
+      class="max-w-3xl mx-auto px-4 pt-4 pb-8 bg-white bg-opacity-70 rounded-xl"
     >
       <h1 class="text-4xl font-bold text-center text-[var(--text-primary)] mb-6">
         My Notes
@@ -37,7 +37,8 @@
       <form
         action="/create"
         method="post"
-        class="bg-[var(--bg-dark)] p-6 border border-[var(--border-dark)] rounded-xl shadow-md mb-10"
+        class="border border-[var(--border-dark)] mb-10
+        bg-pink-50 rounded-lg p-6 shadow-md"
       >
         <div class="mb-4">
           <label
@@ -47,7 +48,7 @@
           >
           <input
             name="title"
-            class="border border-[var(--border-dark)] rounded-xl w-full px-4 py-2 bg-[var(--input-bg)] text-[var(--text-primary)] placeholder-[var(--placeholder-color)] focus:outline-none focus:border-[var(--button-primary)]"
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
             id="title"
             type="text"
             placeholder="Enter title"
@@ -61,7 +62,7 @@
           >
           <textarea
             name="note"
-            class="resize-none w-full px-4 py-2 border border-[var(--border-dark)] rounded-xl bg-[var(--input-bg)] text-[var(--text-primary)] placeholder-[var(--placeholder-color)] focus:outline-none focus:border-[var(--button-primary)]"
+            class="resize-none w-full px-4 py-2 border w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
             id="description"
             placeholder="Write your note here..."
             rows="4"
@@ -80,7 +81,7 @@
           <% files.forEach(function(val) { %>
             <% if (val !== ".gitkeep") { %>
               <div
-                class="bg-[var(--bg-dark)] p-4 rounded-xl shadow-lg border border-[var(--border-dark)] text-center"
+              class="p-2 rounded-xl text-center bg-pink-100 hover:bg-white hover:bg-opacity-60 transition duration-300 shadow-lg bg-opacity-70"
               >
                 <h2 class="text-xl font-semibold text-[var(--text-primary)] mb-2">
                   <%= val %>
