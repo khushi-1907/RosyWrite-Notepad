@@ -8,14 +8,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
-      --light-blue-bg: #ffedff;
-      --dark-blue-bg: #ffbdd6;
-      --dark-blue-border: #fdcdfd;
-      --input-blue: #ec7fa9;
-      --placeholder-blue: #ffedff;
-      --text-light: #be6085;
-      --button-blue: #be6085;
-      --button-blue-hover: #ec7fa9;
+      --bg-light: #ffedff;
+      --bg-dark: #ffbdd6;
+      --border-dark: #fdcdfd;
+      --input-bg: #ec93b5;
+      --placeholder-color: #ffedff;
+      --text-primary: #7a2e4c;
+      --button-primary: #be6085;
+      --button-primary-hover: #ec7fa9;
     }
 
     body {
@@ -25,19 +25,19 @@
   </style>
 </head>
 
-<body class="text-[var(--text-light)] min-h-screen font-sans p-8">
-  <div class="max-w-3xl mx-auto bg-[var(--light-blue-bg)] bg-opacity-80 rounded-xl p-8 shadow-lg">
+<body class="text-[var(--text-primary)] min-h-screen font-sans p-8">
+  <div class="max-w-3xl mx-auto bg-[var(--bg-light)] bg-opacity-80 rounded-xl p-8 shadow-lg">
     
     <!-- Go Back Button -->
-    <a href="/" class="inline-block bg-[var(--button-blue)] hover:bg-[var(--button-blue-hover)] text-white py-2 px-4 mb-8 rounded">
+    <a href="/" class="inline-block bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-2 px-4 mb-8 rounded">
       ← Go Back to Home
     </a>
 
     <!-- Note Title -->
-    <h1 class="text-4xl font-bold mb-4 text-[var(--text-light)]"><%= file %></h1>
+    <h1 class="text-4xl font-bold mb-4 text-[var(--text-primary)]"><%= file %></h1>
 
     <!-- Note Description -->
-    <div class="text-lg leading-relaxed text-[var(--text-light)]">
+    <div class="text-lg leading-relaxed text-[var(--text-primary)]">
       <p>
         <%= data %>
       </p>

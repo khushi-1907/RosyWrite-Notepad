@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Note</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-light: #ffedff;
+      --bg-dark: #ffbdd6;
+      --border-dark: #fdcdfd;
+      --input-bg: #ec93b5;
+      --placeholder-color: #ffedff;
+      --text-primary: #7a2e4c;
+      --button-primary: #be6085;
+      --button-primary-hover: #ec7fa9;
+    }
+
+    body {
+      background: url('/background.webp') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body class="text-[var(--text-primary)] min-h-screen font-sans p-8">
+  <div class="max-w-3xl mx-auto bg-[var(--bg-light)] bg-opacity-80 rounded-xl p-8 shadow-lg">
+    
+    <!-- Go Back Button -->
+    <a href="/" class="inline-block bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-2 px-4 mb-8 rounded">
+      ← Go Back to Home
+    </a>
+
+    <!-- Note Title -->
+    <h1 class="text-4xl font-bold mb-4 text-[var(--text-primary)]">Edit Note: </h1>
+
+    <!-- Edit Form -->
+    <form action="/edit/<%= file %>" method="POST">
+        <div class="mb-4">
+            <input
+            type="text"
+            name="title"
+            value="<%= file %>"
+            class="w-full px-4 py-2 border border-[var(--border-dark)] rounded-xl bg-[var(--bg-dark)] text-[var(--text-primary)] placeholder-[var(--placeholder-color)] focus:outline-none focus:border-[var(--button-primary)] mb-4"
+            placeholder="Title"
+            />
+      <div class="mb-6">
+        <textarea
+          name="note"
+          rows="8"
+          class="w-full px-4 py-2 border border-[var(--border-dark)] rounded-xl bg-[var(--bg-dark)] text-[var(--text-primary)] placeholder-[var(--placeholder-color)] focus:outline-none focus:border-[var(--button-primary)]"
+        ><%= data %></textarea>
+      </div>
+      <button
+        type="submit"
+        class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-2 px-4 rounded"
+      >
+        Save Changes
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>
