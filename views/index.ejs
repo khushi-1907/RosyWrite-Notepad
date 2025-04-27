@@ -13,7 +13,7 @@
         --input-bg: #ec93b5;
         --placeholder-color: #ffedff;
         --text-primary: #7a2e4c;
-        --button-primary:  #D16D87;
+        --button-primary: #d16d87;
         --button-primary-hover: #ec7fa9;
       }
 
@@ -31,40 +31,41 @@
     <div
       class="max-w-3xl mx-auto px-4 pt-4 pb-8 bg-white bg-opacity-70 rounded-xl"
     >
-      <h1 class="text-4xl font-bold text-center text-[var(--text-primary)] mb-6">
-        My Notes
+      <h1
+        class="text-4xl font-bold text-center text-[var(--text-primary)] mb-6"
+      >
+        RosyWrite
       </h1>
       <form
         action="/create"
         method="post"
-        class="border border-[var(--border-dark)] mb-10
-        bg-pink-50 rounded-lg p-6 shadow-md"
+        class="border border-[var(--border-dark)] mb-10 bg-pink-50 rounded-lg p-6 shadow-md"
       >
         <div class="mb-4">
           <label
             class="block text-[var(--text-primary)] text-sm font-bold mb-2"
             for="title"
-            >Title</label
+            >Name</label
           >
           <input
             name="title"
             class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
             id="title"
             type="text"
-            placeholder="Enter title"
+            placeholder="Give your note a name"
           />
         </div>
         <div class="mb-4">
           <label
             class="block text-[var(--text-primary)] text-sm font-bold mb-2"
             for="description"
-            >Description</label
+            >Describe</label
           >
           <textarea
             name="note"
             class="resize-none w-full px-4 py-2 border w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500"
             id="description"
-            placeholder="Write your note here..."
+            placeholder="Let it all out here..."
             rows="4"
           ></textarea>
         </div>
@@ -72,47 +73,51 @@
           type="submit"
           class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-2 px-4 rounded"
         >
-          Add Note
+        Blush the Note
         </button>
       </form>
-
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <% if (files.length > 1) { %>
-          <% files.forEach(function(val) { %>
-            <% if (val !== ".gitkeep") { %>
-              <div
-              class="p-2 rounded-xl text-center bg-pink-100 hover:bg-white hover:bg-opacity-60 transition duration-300 shadow-lg bg-opacity-70"
+        <% if (title.length > 0) { %>
+        <% title.forEach(function(val) { %>
+          <div
+            class="p-2 rounded-xl text-center bg-pink-100 hover:bg-white hover:bg-opacity-60 transition duration-300 shadow-lg bg-opacity-70"
+          >
+            <h2 class="text-xl font-semibold text-[var(--text-primary)] mb-2">
+              <%= val.title %> <!-- Access the 'title' property of each object -->
+            </h2>
+            <div class="flex space-x-1 justify-center">
+              <a
+                href="/show/<%= val._id %>"
+                class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
               >
-                <h2 class="text-xl font-semibold text-[var(--text-primary)] mb-2">
-                  <%= val %>
-                </h2>
-                <div class="flex space-x-1 justify-center">
-                  <a
-                    href="/file/<%= val %>"
-                    class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
-                  >
-                    Open
-                  </a>
-                  <a
-                    href="/edit/<%= val %>"
-                    class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
-                  >
-                    Edit
-                  </a>
-                  <form action="/delete/<%= val %>" method="post" style="display:inline;" class="w-full">
-                    <button
-                      type="submit"
-                      class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
-                    >
-                      Remove
-                    </button>
-                  </form>
-                </div>
-              </div>
-            <% } %>
-          <% }) %>
+                Reveal
+              </a>
+              <a
+                href="/edit/<%= val._id %>"
+                class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
+              >
+                Enhance
+              </a>
+              <form
+                action="/delete/<%= val._id %>"
+                method="post"
+                style="display: inline"
+                class="w-full"
+              >
+                <button
+                  type="submit"
+                  class="bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
+                >
+                  Forget
+                </button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
         <% } else { %>
-          <div class="text-[var(--text-primary)] text-center">No notes available.</div>
+        <div class="text-[var(--text-primary)] text-center">
+          Your notebook is waiting...
+        </div>
         <% } %>
       </div>
     </div>
