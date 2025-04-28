@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RosyWrite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="/favicon.ico?v=1" type="image/x-icon" />
+    <style>
+      :root {
+        --bg-light: #ffedff;
+        --bg-dark: #ffbdd6;
+        --border-dark: #fdcdfd;
+        --input-bg: #ec93b5;
+        --placeholder-color: #ffedff;
+        --text-primary: #7a2e4c;
+        --button-primary: #d16d87;
+        --button-primary-hover: #ec7fa9;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        background: url("/background.webp") no-repeat center center fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body class="text-[var(--text-primary)] font-sans min-h-screen flex items-center justify-center p-6 md:p-10">
+    <div class="w-full max-w-2xl bg-white bg-opacity-70 rounded-xl shadow-lg px-4 sm:px-6 md:px-8 py-6 md:py-8">
+      
+      <!-- Logout Button aligned inside -->
+      <div class="flex justify-end mb-4">
+        <form action="/logout" method="post">
+          <button
+            type="submit"
+            class="text-sm bg-[var(--text-primary)] hover:bg-[var(--button-primary-hover)] text-white font-semibold py-2 px-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-pink-300"
+          >
+            Logout
+          </button>
+        </form>
+      </div>
+
+      <h1 class="text-3xl font-bold text-center text-[var(--text-primary)] mb-4">
+        RosyWrite
+      </h1>
+
+      <form
+        action="/create"
+        method="post"
+        class="border border-[var(--border-dark)] mb-8 bg-pink-50 rounded-lg p-4 md:p-6 shadow-md"
+      >
+        <div class="mb-4">
+          <label class="block text-[var(--text-primary)] text-sm font-bold mb-2" for="title">
+            Name
+          </label>
+          <input
+            name="title"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-sm"
+            id="title"
+            type="text"
+            placeholder="Give your note a name"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-[var(--text-primary)] text-sm font-bold mb-2" for="description">
+            Describe
+          </label>
+          <textarea
+            name="note"
+            class="resize-none w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 text-sm"
+            id="description"
+            placeholder="Let it all out here..."
+            rows="4"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="text-sm bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-2 px-4 rounded"
+        >
+          Blush the Note
+        </button>
+      </form>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <% if (title.length > 0) { %>
+          <% title.forEach(function(val) { %>
+            <div class="p-3 rounded-xl text-center bg-pink-100 hover:bg-white hover:bg-opacity-60 transition duration-300 shadow-lg bg-opacity-70">
+              <h2 class="text-lg font-semibold text-[var(--text-primary)] mb-2">
+                <%= val.title %>
+              </h2>
+              <div class="flex space-x-1 justify-center">
+                <a
+                  href="/show/<%= val._id %>"
+                  class="text-sm bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
+                >
+                  Reveal
+                </a>
+                <a
+                  href="/edit/<%= val._id %>"
+                  class="text-sm bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
+                >
+                  Enhance
+                </a>
+                <form action="/delete/<%= val._id %>" method="post" style="display: inline" class="w-full">
+                  <button
+                    type="submit"
+                    class="text-sm bg-[var(--button-primary)] hover:bg-[var(--button-primary-hover)] text-white py-1 px-2 rounded w-full text-center"
+                  >
+                    Forget
+                  </button>
+                </form>
+              </div>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <div class="text-[var(--text-primary)] text-center text-sm">
+            Your notebook is waiting...
+          </div>
+        <% } %>
+      </div>
+      
+    </div>
+  </body>
+</html>
