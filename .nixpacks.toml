@@ -1,0 +1,12 @@
+# .nixpacks.toml
+[phases.lockfix]            # runs before the normal “install” phase
+cmds = [
+  # Rewrite package-lock.json so it matches package.json
+  "npm install --package-lock-only --ignore-scripts"
+]
+
+[phases.install]            # override the default install command
+cmds = [
+  # now npm ci will succeed
+  "npm ci --omit=dev"
+]
