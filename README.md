@@ -5,28 +5,28 @@ RosyWrite Notepad is a secure, minimal, and distraction-free web-based applicati
 rosywrite-notepad.onrender.com
 
 ## 🛡️ Key Features
-1. -✍️ Clean and responsive writing interface
-2. -🔐 User authentication with JWT
--🔒 Notes are private to each logged-in user
--📄 Full CRUD (Create, Read, Update, Delete) for personal notes
--🚪 Secure Logout to end session
--💾 Autosave / persistent storage
--📱 Mobile responsive UI
+1. ✍️ Clean and responsive writing interface
+2. 🔐 User authentication with JWT
+3. 🔒 Notes are private to each logged-in user
+4. 📄 Full CRUD (Create, Read, Update, Delete) for personal notes
+5. 🚪 Secure Logout to end session
+6. 💾 Autosave / persistent storage
+7. 📱 Mobile responsive UI
 
 ## 🧭 How It Works
-Sign up or log in
-Access your personal dashboard
-Create, edit, or delete your private notes
-Securely log out when done
-Each user’s notes are stored securely and are never visible to others.
+1. Sign up or log in
+2. Access your personal dashboard
+3. Create, edit, or delete your private notes
+4. Securely log out when done
+5. Each user’s notes are stored securely and are never visible to others.
 
 🚀 Tech Stack
-Layer	Tech
-Frontend	EJS
-Backend	Node.js, Express
-Auth	JSON Web Tokens (JWT)
-Database	MongoDB / Mongoose (or as implemented)
-Deployment	Render.com
+1. Layer: Tech
+2. Frontend:	EJS
+3. Backend:	Node.js, Express
+4. Auth:	JSON Web Tokens (JWT)
+5. Database:	MongoDB / Mongoose (or as implemented)
+6. Deployment:	Render.com
 
 ## 🏗️ Installation (Dev Setup)
 # Clone the repository
@@ -48,20 +48,20 @@ Then open http://localhost:3000 in your browser.
 
 # 🔐 Authentication
 RosyWrite includes robust authentication features:
-✅ JWT-based login system
-✅ Secure sign-up and login forms
-✅ Protected routes via middleware
-✅ Encrypted token storage in browser
-✅ Logout endpoint to invalidate session
+1. JWT-based login system
+2. Secure sign-up and login forms
+3. Protected routes via middleware
+4. Encrypted token storage in browser
+5. Logout endpoint to invalidate session
 
 Only logged-in users can view or edit their notes.
 
 # 📝 Notes Dashboard
 Once logged in, users can:
-➕ Create notes
-✏️ Edit existing ones
-🗑️ Delete notes
-📄 View saved notes, all scoped to the user
+1.➕ Create notes
+2.✏️ Edit existing ones
+3.🗑️ Delete notes
+4.📄 View saved notes, all scoped to the user
 Your notes are always private, secure, and accessible only to you.
 
 # ✨ Future Plans
