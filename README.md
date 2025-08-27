@@ -38,7 +38,7 @@ cd RosyWrite-Notepad
 ```bash
 npm install
 ```
-# (Optional) Setup .env file with JWT_SECRET, DB_URI, etc.
+(Optional) Setup .env file with JWT_SECRET, DB_URI, etc.
 
 # Start the server
 ```bash
@@ -58,25 +58,25 @@ Only logged-in users can view or edit their notes.
 
 # 📝 Notes Dashboard
 Once logged in, users can:
-1.➕ Create notes
-2.✏️ Edit existing ones
-3.🗑️ Delete notes
-4.📄 View saved notes, all scoped to the user
+1. ➕ Create notes
+2. ✏️ Edit existing ones
+3. 🗑️ Delete notes
+4. 📄 View saved notes, all scoped to the user
 Your notes are always private, secure, and accessible only to you.
 
 # ✨ Future Plans
-🔄 Note versioning and history
-🧠 AI-based note tagging and smart categorization
-🌓 Light/Dark mode
-🔔 Reminder emails or notifications
-🤝 Contributing
+1. 🔄 Note versioning and history
+2. 🧠 AI-based note tagging and smart categorization
+3. 🌓 Light/Dark mode
+4. 🔔 Reminder emails or notifications
+5. 🤝 Contributing
 
 Pull requests are welcome! To contribute:
-Fork the repo
-Create your feature branch: git checkout -b feature/awesome
-Commit your changes: git commit -m 'Add awesome feature'
-Push to the branch: git push origin feature/awesome
-Open a PR
+1. Fork the repo
+2. Create your feature branch: git checkout -b feature/awesome
+3. Commit your changes: git commit -m 'Add awesome feature'
+4. Push to the branch: git push origin feature/awesome
+5. Open a PR
 
 # 👩‍💻 Author
 Ruchi Kumari
