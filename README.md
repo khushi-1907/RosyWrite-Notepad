@@ -5,13 +5,13 @@ RosyWrite Notepad is a secure, minimal, and distraction-free web-based applicati
 rosywrite-notepad.onrender.com
 
 ## 🛡️ Key Features
-✍️ Clean and responsive writing interface
-🔐 User authentication with JWT
-🔒 Notes are private to each logged-in user
-📄 Full CRUD (Create, Read, Update, Delete) for personal notes
-🚪 Secure Logout to end session
-💾 Autosave / persistent storage
-📱 Mobile responsive UI
+1. -✍️ Clean and responsive writing interface
+2. -🔐 User authentication with JWT
+-🔒 Notes are private to each logged-in user
+-📄 Full CRUD (Create, Read, Update, Delete) for personal notes
+-🚪 Secure Logout to end session
+-💾 Autosave / persistent storage
+-📱 Mobile responsive UI
 
 ## 🧭 How It Works
 Sign up or log in
