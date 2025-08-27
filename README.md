@@ -1,7 +1,8 @@
 ## 🌸 RosyWrite Notepad
 RosyWrite Notepad is a secure, minimal, and distraction-free web-based application for writing and managing your personal notes. Built with privacy in mind, it features authentication, JWT token protection, and a private user dashboard.
 
-## 🔗 Live Demo: rosywrite-notepad.onrender.com
+## 🔗 Live Demo: 
+rosywrite-notepad.onrender.com
 
 ## 🛡️ Key Features
 ✍️ Clean and responsive writing interface
